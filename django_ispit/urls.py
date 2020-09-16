@@ -19,5 +19,8 @@ from djangoIspit import views as my_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('users/', my_views.UserChartView.as_view(), name='home')
+    path('users/', my_views.UserChartView.as_view(), name='users'),
+    path('posts/', my_views.PostChartView.as_view(), name='posts'),
+    path('comments/', my_views.CommentChartView.as_view(), name='comments'),
+    path('', my_views.home)
 ]

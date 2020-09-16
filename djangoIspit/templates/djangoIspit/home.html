@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{% endblock title %}
+
+{% block scripts %}
+{% endblock %}
+
+{% block content %}
+    <div class="col-5">
+        <h1>User analytics</h1>
+        <p>If you want to see how many users were created from some date until some date</p>
+
+        <form action="/users/" method="get" class="col-6">
+            <div class="form-group">
+                <label for="inputStateUser">Type of chart:</label>
+                <select id="inputStateUser" class="form-control" name="chartType">
+                    <option selected>bar</option>
+                    <option>line</option>
+                    <option>radar</option>
+                    <option>bubble</option>
+                    <option>scatter</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dateFromUser">Date From</label>
+                <input type="date" class="form-control" id="dateFromUser" name="from" placeholder="Date From">
+            </div>
+            <div class="form-group">
+                <label for="dateToUser">Date To</label>
+                <input type="date" class="form-control" id="dateToUser" name="to" placeholder="Date To">
+            </div>
+          <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+        <br><br><br>
+    </div>
+
+    <div class="col-5">
+        <h1>Post analytics</h1>
+        <p>If you want to see users post history or if you want to see how many posts were created from some date until some date</p>
+
+        <form action="/posts/" method="get" class="col-6">
+            <div class="form-group">
+                <label for="inputStatePost">Type of chart:</label>
+                <select id="inputStatePost" class="form-control" name="chartType">
+                    <option selected>bar</option>
+                    <option>line</option>
+                    <option>radar</option>
+                    <option>bubble</option>
+                    <option>scatter</option>
+                </select>
+            </div>
+          <div class="form-group">
+            <label for="usernamePosts">Username</label>
+            <input type="text" class="form-control" id="usernamePosts" name="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="dateFromPost">Date From</label>
+            <input type="date" class="form-control" id="dateFromPost" name="from" placeholder="Date From">
+          </div>
+          <div class="form-group">
+            <label for="dateToPost">Date To</label>
+            <input type="date" class="form-control" id="dateToPost" name="to" placeholder="Date To">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="onlyPicsCheckBox" name="onlyPics">
+            <label class="form-check-label" for="onlyPicsCheckBox">Only posts with pictures</label>
+          </div>
+            <br>
+          <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+        <br><br><br>
+    </div>
+
+    <div class="col-5">
+        <h1>Comment analytics</h1>
+        <p>If you want to see users comment history or if you want to see how many comments were created from some date until some date</p>
+
+        <form action="/comments/" method="get" class="col-6">
+            <div class="form-group">
+                <label for="inputStateComment">Type of chart:</label>
+                <select id="inputStateComment" class="form-control" name="chartType">
+                    <option selected>bar</option>
+                    <option>line</option>
+                    <option>radar</option>
+                    <option>bubble</option>
+                    <option>scatter</option>
+                </select>
+            </div>
+          <div class="form-group">
+            <label for="usernameComments">Username</label>
+            <input type="text" class="form-control" id="usernameComments" name="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="dateFromPost">Date From</label>
+            <input type="date" class="form-control" id="dateFromPost" name="from" placeholder="Date From">
+          </div>
+          <div class="form-group">
+            <label for="dateToPost">Date To</label>
+            <input type="date" class="form-control" id="dateToPost" name="to" placeholder="Date To">
+          </div>
+          <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+        <br><br><br>
+    </div>
+{% endblock content %}

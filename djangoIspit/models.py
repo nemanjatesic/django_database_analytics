@@ -30,6 +30,9 @@ class Post(models.Model):
     createdat = models.DateTimeField(db_column='createdAt')  # Field name made lowercase.
     updatedat = models.DateTimeField(db_column='updatedAt')  # Field name made lowercase.
 
+    def date_as_string(self):
+        return self.createdat.strftime('%Y-%m-%d')
+
     class Meta:
         managed = False
         db_table = 'posts'
@@ -41,6 +44,9 @@ class Comment(models.Model):
     createdat = models.DateTimeField(db_column='createdAt')  # Field name made lowercase.
     updatedat = models.DateTimeField(db_column='updatedAt')  # Field name made lowercase.
     postid = models.ForeignKey('Post', models.DO_NOTHING, db_column='postId', blank=True, null=True)  # Field name made lowercase.
+
+    def date_as_string(self):
+        return self.createdat.strftime('%Y-%m-%d')
 
     class Meta:
         managed = False

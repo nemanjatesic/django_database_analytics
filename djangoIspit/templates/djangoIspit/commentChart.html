@@ -9,11 +9,11 @@
 $(document).ready(function () {
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
-        type: 'radar',
+        type: '{{char_type}}',
         data: {
             labels: [{% for item in qs %}'{{item.date}}',{% endfor %}],
             datasets: [{
-                label: '# of Votes',
+                label: '# of Comments',
                 data: [{% for item in qs %}{{item.number_of_users}},{% endfor %}],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
